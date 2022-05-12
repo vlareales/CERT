@@ -87,6 +87,7 @@ class ControladorUsuarios{
 				}
 
 			}else{
+				print($_POST["nuevoNombre"]);
 				echo '<script>
 				swal({
 
