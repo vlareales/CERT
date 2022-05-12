@@ -63,6 +63,9 @@ class ControladorUsuarios{
 					          "perfil" => $_POST["nuevoPerfil"]);
 
 				$respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
+				
+
+
 
 				if($respuesta == "ok"){
 
@@ -70,7 +73,7 @@ class ControladorUsuarios{
 				swal({
 
 					type: "success",
-					title: "¡El usuario ha sido guardado correctamente",
+					title: "¡El usuario ha sido guardado correctamente '.$respuesta.'",
 					showConfirmButton: true,
 					confirmButtonText: "Cerrar",
 					closeOnConfirm: false
@@ -83,12 +86,33 @@ class ControladorUsuarios{
 
 						});
 
-
+						console.log('.$respuesta.');
 				</script>';
+					
+				}else{
+					echo '<script>
+				swal({
 
+					type: "success",
+					title: "¡El usuario no se guardo '.$respuesta.'",
+					showConfirmButton: true,
+					confirmButtonText: "Cerrar",
+					closeOnConfirm: false
+
+					}).then((result)=>{
+
+						if(result.value){
+							window.location = "usuarios";
+						}
+
+						});
+
+						console.log('.$respuesta.');
+				</script>';
 				}
 
 			}else{
+				print($_POST["nuevoNombre"]);
 				echo '<script>
 				swal({
 
@@ -106,7 +130,7 @@ class ControladorUsuarios{
 
 						});
 
-
+						
 				</script>';
 				}
 
