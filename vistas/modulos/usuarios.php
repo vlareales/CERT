@@ -43,22 +43,37 @@
               </tr>
             </thead>
 
-            <tbody>
-              
-              <tr>
+          <tbody>
+
+          <?php 
+
+          $item = null;
+          $valor = null; 
+
+          $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+          foreach ($usuarios as $key => $value){
+
+          echo ' <tr>
                 <td>1</td>
-                <td>Usuario Administrador</td>
-                <td>admin</td>
-                <td>Administrador</td>
+                <td>'.$value["nombre"].'</td>
+                <td>'.$value["usuario"].'</td>
+                <td>'.$value["perfil"].'</td>
                 <td><button class="btn btn-success btn-xs">Activado</button></td>
-                <td>2022-05-03 12:05:32</td>
+                <td>'.$value["ultimo_login"].'</td>
                 <td>
                   <div class="btn-group">
                     <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
                     <button class="btn btn-danger"><i class="fa fa-times"></i></button>
                   </div>
                 </td>
-              </tr>
+              </tr>';
+          }
+
+
+          ?>
+              
+             
             </tbody>
           </table>
       </div>

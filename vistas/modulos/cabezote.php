@@ -40,7 +40,7 @@
 						
 						<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">
 
-						<span class="hidden-xs">Usuario Administrador</span>
+						<span class="hidden-xs"> <?php echo $_SESSION["nombre"];  ?></span>
       				</a>
       				<!-- Dropdown-toggle -->
       	<ul class="dropdown-menu">
